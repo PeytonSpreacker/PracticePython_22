@@ -7,3 +7,15 @@ fhand = open("./SUN.txt")
 #     count = count +1
 # print("Line Count:", count)
 
+counter_dict = {}
+
+line = fhand.readline()
+while line:
+    words = line.split("/")
+    if words[2] in counter_dict:
+        counter_dict[words[2]] += 1
+    else:
+        counter_dict[words[2]] = 1
+    line = fhand.readline()
+
+print(counter_dict)
